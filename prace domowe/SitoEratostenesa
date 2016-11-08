@@ -1,0 +1,32 @@
+
+
+print 'Podaj zakres sita'
+rozmiar = int(raw_input())
+tablicaLogiczna=range(2, rozmiar)
+
+
+wielokrotnosc = 2
+iloscSprawdzen = 0
+
+
+while iloscSprawdzen<rozmiar:
+    wielokrotnosc=tablicaLogiczna[iloscSprawdzen]
+    iloscSprawdzen = iloscSprawdzen + 1
+    if(wielokrotnosc == 0):
+        break
+
+    for x in xrange(rozmiar-2):
+        liczba = tablicaLogiczna[x]
+
+        if(liczba%wielokrotnosc == 0 and liczba != wielokrotnosc):
+            tablicaLogiczna.remove(liczba)
+            tablicaLogiczna.append(0)
+
+for x in xrange(rozmiar - 2):
+    if(tablicaLogiczna[x]!=0):
+        print tablicaLogiczna[x]
+    else:
+        break
+
+
+

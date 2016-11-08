@@ -1,0 +1,20 @@
+import random
+
+print 'Podaj zakres wiekszy od 0'
+
+zakres = int(raw_input())
+print 'Podaj ilosc prob'
+proby = int(raw_input())
+prawidlowa_odpowiedz = random.randint(1,zakres)
+for i in xrange(proby):
+    print 'Podaj odpowiedz'
+    odpowiedz = int(raw_input())
+    if(odpowiedz==prawidlowa_odpowiedz):
+        print 'Sukces'
+        break
+    elif(odpowiedz>prawidlowa_odpowiedz):
+        print 'Mniej'
+    else:
+        print 'Wiecej'
+#print 'Zakres: ',  zakres
+print 'Odp: ', prawidlowa_odpowiedz

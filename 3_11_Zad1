@@ -1,0 +1,8 @@
+import random
+l= range(1,40)
+print l
+for i in xrange(6):
+    a = random.choice(l)
+    l.remove(a)
+    print a
+print l

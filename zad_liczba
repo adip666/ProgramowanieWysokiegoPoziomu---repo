@@ -1,0 +1,15 @@
+l=range(1,21)
+
+def znajdz(element):
+    global a
+    a=0
+    for i in l:
+        if l[i] == element:
+            a=i
+            return
+
+
+
+print l
+print znajdz(2)
+print a

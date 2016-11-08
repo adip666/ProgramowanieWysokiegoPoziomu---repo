@@ -1,0 +1,54 @@
+class Adres:
+
+    def add(self):
+        self.index = index
+        print 'Imie'
+        self.imie = str(raw_input())
+        print 'Nazwisko'
+        self.nazwisko = str(raw_input())
+        print 'Adres'
+        self.adres = str(raw_input())
+
+    def remove(self):
+        self.__dict__.clear()
+
+    def show(self):
+        print self.__dict__
+
+    pass
+print 'polecenia: '
+print '1: Dodaj dane'
+print '2: Usun dane'
+print '3: Pokaz dane'
+print '0: koniec'
+print ' '
+print '*************'
+print ' '
+l = []
+index = 0
+#adr1 = Adres() #utworzenie rekordu
+#adr1.add()
+#print adr1.__dict__
+#adr1.remove()
+#print 'test',adr1.__dict__
+while True :
+
+    print 'PODAJ KOMENDE:'
+
+    polecenie = int(raw_input())
+    if(polecenie == 0):
+
+        break
+    elif(polecenie == 1):
+        l.append(Adres())
+        l[index].add()
+        index=+1
+        print 'Dodano'
+    elif(polecenie == 2):
+        print 'Podaj index osoby do usuniecia'
+        usuwamy =int(raw_input())
+        l[usuwamy].remove()
+
+    elif (polecenie == 3):
+        for i in range(index+1):
+            print l[i].show()

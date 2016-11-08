@@ -1,0 +1,19 @@
+
+import random
+#from random import*    #nazwy funkcji dostępne bez uzycia nazwy moduli
+#from random import randint   #funkcja dostebna beez nazwy modulu
+
+random.seed()
+print random.randint(1,15)
+
+l= range(1,10)
+print random.choice(l) #losowy element z sekwencji
+
+random.shuffle(l) #wykonuje losową permutacje sekwencji
+print l
+
+print random.random() #losowa liczba rzeczywista z zakresu  0.0 do 1.0
+
+print random.uniform(10,30) #losowa liczba rzeczywista z przedziału 1-30
+
+print random.normalvariate(5,48)    #zmienna losowa o rozkładzie normalnym o sredniej 5 i odchyleniu 48
