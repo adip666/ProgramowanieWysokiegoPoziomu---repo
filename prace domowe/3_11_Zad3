@@ -13,13 +13,28 @@ class Adres:
         self.__dict__.clear()
 
     def show(self):
-        print self.__dict__
+        #print self.__dict__
+        print self.index, " ", self.imie, " ", self.nazwisko, " ", self.adres
+
+    def edit(self, dane):
+        if(dane ==1):
+            print 'Nowe imie'
+            self.imie = str(raw_input())
+        elif(dane ==2):
+            print 'Nowe nazwisko'
+            self.nazwisko = str(raw_input())
+        elif (dane == 3):
+            print 'Nowy Adres'
+            self.adres = str(raw_input())
+        else:
+            print 'Blad: Zly parametr'
 
     pass
 print 'polecenia: '
 print '1: Dodaj dane'
 print '2: Usun dane'
 print '3: Pokaz dane'
+print '4: Modyfikuj dane'
 print '0: koniec'
 print ' '
 print '*************'
@@ -42,13 +57,24 @@ while True :
     elif(polecenie == 1):
         l.append(Adres())
         l[index].add()
-        index=+1
+        index=index+1
         print 'Dodano'
+
     elif(polecenie == 2):
         print 'Podaj index osoby do usuniecia'
         usuwamy =int(raw_input())
         l[usuwamy].remove()
 
     elif (polecenie == 3):
-        for i in range(index+1):
+        for i in range(index):
             print l[i].show()
+
+    elif (polecenie == 4):
+        print 'Podaj index osoby do modyfikowania'
+        zmieniamyIndex = int(raw_input())
+        print 'Co zmienic? (1 - Imie, 2 - Nazwisko 3 - Adres)'
+        zmieniamyWpis = int(raw_input())
+        l[zmieniamyIndex].edit(zmieniamyWpis)
+
+    else:
+        print 'Blad: Nierozpoznalem komendy'
